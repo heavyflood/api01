@@ -39,7 +39,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: ${IMAGE}
+          image: heavyflood/api-test
           imagePullPolicy: Always
           ports:
             - name: http
