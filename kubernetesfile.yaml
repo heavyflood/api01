@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: app
 spec:
-  type: NodPort
+  type: NodePort
   selector:
     app: app
   ports:
