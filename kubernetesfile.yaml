@@ -21,7 +21,7 @@ kind: Deployment
 metadata:
   name: app
 spec:
-  replicas: 4
+  replicas: 3
   #  minReadySeconds: 20
   revisionHistoryLimit: 2
   strategy:
@@ -82,3 +82,20 @@ spec:
       imagePullSecrets:
         - name: regcred
 ---
+
+#Ingress
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: app-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: app-ip
+  labels:
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: app
+              servicePort: 9090
