@@ -12,7 +12,7 @@ spec:
       protocol: TCP
       port: 80
       #   nodePort: 30130
-      targetPort: 9082
+      targetPort: 9090
 ---
 
 # DEPOLOYMENT
