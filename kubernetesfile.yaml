@@ -10,7 +10,7 @@ spec:
   ports:
     - name: http
       protocol: TCP
-      port: 9090
+      port: 80
       #   nodePort: 30130
       nodePort: null
       targetPort: 9090
@@ -97,4 +97,4 @@ spec:
           - path: /
             backend:
               serviceName: app
-              servicePort: 9090
+              servicePort: 80
